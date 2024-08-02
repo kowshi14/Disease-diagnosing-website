@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <title>Hiking Kings</title>
+
+    <style>
+        .banner {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("{{url_for('static', filename='banner.jpg')}}");
+            width: 100%;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <img src="{{url_for('static', filename='logo.png')}}" alt="" class="logo">
+            <ul>
+                <!-- <li><a href="#">Home</a></li>
+                <li><a href="#">Equipment</a></li> -->
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h1>EXPLORE THE UNKNOWN</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet corporis in error?</p>
+            <!-- <div>
+                <button class="signup-btn" type="button"><span class="cover"></span><a href="Login.html" style="color: white"> SIGN UP</a> </button>
+                <button class="login-btn" type="button"><span class="cover"></span><a href="Login.html" style="color: white">LOG IN</a></button>
+            </div> -->
+        </div>
+    </div>
+
+    <section class="product"> 
+        <h2 class="product-category">Our Services</h2>
+        <button class="pre-btn"><img src="{{url_for('static', filename='arrow.png')}}" alt=""></button>
+        <button class="nxt-btn"><img src="{{url_for('static', filename='arrow.png')}}" alt=""></button>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">92%</span>
+                    <img src="{{url_for('static', filename='Diabetes.jpg')}}" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="document.location = '/Diabetes'">Check for Diabetes</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Diabetes</h2>
+                    <p class="product-short-description">Check Your diabetes reports</p>
+                    <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">90%</span>
+                    <img src="{{url_for('static', filename='Heart.jpeg')}}" class="product-thumb" alt="">
+                    <button class="card-btn " onclick="document.location = '/Heart'">Check Your Heart</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Heart Disease</h2>
+                    <p class="product-short-description">Check your Heart Condition</p>
+                    <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">92%</span>
+                    <img src="{{url_for('static', filename='BodyFat.jpeg')}}" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="document.location = '/BodyFat'">Check Your Body Fat</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Body Fat</h2>
+                    <p class="product-short-description">Check your BodyFat</p>
+                    <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">90%</span>
+                    <img src="{{url_for('static', filename='BreastCancer.jpeg')}}" class="product-thumb" alt="">
+                    <button class="card-btn" onclick="document.location = '/BreastCancer'">Check for Breast Cancer</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Breast Cancer</h2>
+                    <p class="product-short-description">Check for Breast Cancer</p>
+                    <!-- <span class="price">$20</span><span class="actual-price">$40</span> -->
+                </div>
+            </div>
+
+            <!-- <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="{{url_for('static', filename='card5.jpg')}}" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="{{url_for('static', filename='card6.jpg')}}" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="{{url_for('static', filename='card7.jpg')}}" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="{{url_for('static', filename='card8.jpg')}}" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="{{url_for('static', filename='card9.jpg')}}" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image">
+                    <span class="discount-tag">50% off</span>
+                    <img src="{{url_for('static', filename='card10.jpg')}}" class="product-thumb" alt="">
+                    <button class="card-btn">add to wishlist</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">brand</h2>
+                    <p class="product-short-description">a short line about the cloth..</p>
+                    <span class="price">$20</span><span class="actual-price">$40</span>
+                </div>
+            </div> -->
+        </div>
+    </section>
+    
+    <script src="{{url_for('static', filename='script.js')}}"></script>
+</body>
+</html>

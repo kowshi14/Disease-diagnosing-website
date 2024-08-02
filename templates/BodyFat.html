@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="{{url_for('static', filename='main.css')}}" rel="stylesheet" media="all">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-color: #24252A;
+        }
+        li, a, button {
+            font-family:"Montserrat", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            color: #edf0f1;
+            text-decoration: none;
+        }
+
+        header{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 10%;
+        }
+        .nav_links{
+            list-style: none;
+        }
+        .nav_links li{
+            display: inline-block;
+            padding: 0px 20px;
+        }
+        .nav_links li a{
+            transition: all 0.3s ease 0s;
+        }
+        .nav_links li a:hover{
+            color: #0088a9;
+        }
+        button{
+            padding: 9px 25px;
+            background-color: rgba(0,136,169,1);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+        }
+        button:hover{
+            background-color: rgba(0,136,169,0.8);
+        }
+        .form-group{
+            align-items: center;
+            margin: 250px;
+            margin-left: 800px;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class = "nav_links">
+                <li>LOGO</li>
+                <li><a href="/">Home</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+        <a class = "cta" href="#"><button>Contact Us</button></a>
+    </header>
+
+    <!-- {% with messages = get_flashed_messages(with_categories = true) %}
+        {% if messages %}
+            {% for caterory, message in messages %}
+            {% if category == 'error' %}
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+                </div>
+            {% else %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+                </div>
+            {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endwith %} -->
+    <div class="page-wrapper bg-dark p-t-100 p-b-50">
+        <div class="wrapper wrapper--w900">
+            <div class="card card-6">
+                <div class="card-heading">
+                    <h2 class="title">Check Your BodyFat Reports</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-row">
+                            <div class="name" style="color: white">Age</div>
+                            <div class="value">
+                                <input class="input--style-6" type="number" name="Age" placeholder="Enter Age">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Weight</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" name="Weight" step="0.01" placeholder="0: female 1.male">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Height</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step= "0.01" name="Height" placeholder="Enter Height">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Neck</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step="0.1" name="Neck" placeholder="Enter Neck">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Chest</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step="0.1" name="Chest" placeholder="Enter chest">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Abdomen</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step="0.1" name="Abdomen" placeholder="Enter Abdomen">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Hip</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step="0.1" name="Hip" placeholder="Enter Hip">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Thigh</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step="0.1" name="Thigh" placeholder="Enter Thigh">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Knee</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step="0.1" name="Knee" placeholder="Enter Knee">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Ankle</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step="0.1" name="Ankle" placeholder="Enter Ankle">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Biceps</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step="0.1" name="Biceps" placeholder="Enter Biceps">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Fore Arm</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step="0.1" name="ForeArm" placeholder="Enter ForeArm">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="name" style="color: white">Wrist</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-6" type="number" step = "0.1" name="Wrist" placeholder="Enter Wrist">
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                        <div class="card-footer">
+                            <button class="btn btn--radius-2 btn--blue-2" type="submit">Get Results</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{url_for('static', filename='jquery.min.js')}}"></script>
+
+    <script src="{{url_for('static', filename='global.js')}}"></script>
+
+</body>
+</html>
